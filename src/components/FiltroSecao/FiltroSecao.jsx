@@ -5,7 +5,7 @@ export const FiltroSecao = ({ secoes, onSelecionarSecao }) => {
   return (
     <div>
       {secoes.map(({ nome }) => (
-        <button onClick={() => onSelectionarSecao(nome)}>{nome}</button>
+        <button onClick={() => onSelecionarSecao(nome)}>{nome}</button>
       ))}
     </div>
   );
