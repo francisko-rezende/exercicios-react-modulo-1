@@ -1,4 +1,4 @@
-import { Footer, Header, Secao } from "@components";
+import { Footer, Header, Secao, FiltroSecao } from "@components";
 import produtos from "@services/produtos.json";
 import styles from "./App.module.css";
 
@@ -25,9 +25,12 @@ function App() {
     },
   ];
 
+  const handleSelecionarSecao = (titulo) => {};
+
   return (
     <div className={styles.app}>
       <Header />
+      <FiltroSecao secoes={secoes} onSelecionarSecao={handleSelecionarSecao} />
       <main className={styles.main}>
         {secoes.map((secao) => (
           <Secao
