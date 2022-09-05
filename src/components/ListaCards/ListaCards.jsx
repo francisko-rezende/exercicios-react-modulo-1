@@ -8,11 +8,19 @@ import styles from "./ListaCards.module.css";
 export const ListaCards = ({ produtos }) => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
+  const handleSelecionar = () => {};
+
   return (
     <ul className={styles.lista}>
       {produtos.map((produto) => (
         <li className={styles.listaItem} key={produto.id}>
-          <Card produto={produto} />
+          <Card
+            produto={produto}
+            selecionado={produtosSelecionados.some(
+              (idProduto) => idProduto === produto.id
+            )}
+            onSelecionar={() => handleSelecionar(produto.id)}
+          />
         </li>
       ))}
     </ul>
