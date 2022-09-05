@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.selecionado {
+  border: 1px solid #a2ee8b;
+}
+
 .img {
   border-radius: 20px 20px 0 0;
   width: 100%;
