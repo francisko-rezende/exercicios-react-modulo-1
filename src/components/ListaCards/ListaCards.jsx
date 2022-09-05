@@ -8,7 +8,20 @@ import styles from "./ListaCards.module.css";
 export const ListaCards = ({ produtos }) => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
-  const handleSelecionar = () => {};
+  const handleSelecionar = (id) => {
+    const foiSelecionado = produtosSelecionados.some(
+      (idProduto) => idProduto === id
+    );
+
+    if (foiSelecionado) {
+      setProdutosSelecionados((ids) =>
+        ids.filter((idSelecionado) => idSelecionado !== id)
+      );
+      return;
+    }
+
+    setProdutosSelecionados((ids) => [...ids, id]);
+  };
 
   return (
     <ul className={styles.lista}>
