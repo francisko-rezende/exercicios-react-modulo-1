@@ -5,14 +5,14 @@ import { ProdutosContext } from "./ProductsContext";
 export const ProdutosProvider = ({ children }) => {
   const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
-  const handleSelecionar = (produto) => {
+  const onSelecionar = (produto) => {
     const foiSelecionado = produtosSelecionados.some(
-      (idProduto) => idProduto === produto.id
+      ({ id }) => id === produto.id
     );
 
     if (foiSelecionado) {
       setProdutosSelecionados((produtos) =>
-        produtos.filter((produtoEstado) => produtoEstado.id !== produto.id)
+        produtos.filter(({ id }) => id !== produto.id)
       );
       return;
     }
@@ -25,7 +25,7 @@ export const ProdutosProvider = ({ children }) => {
 
   return (
     <ProdutosContext.Provider
-      value={{ produtosSelecionados, handleSelecionar, ehCardSelecionado }}
+      value={{ produtosSelecionados, onSelecionar, ehCardSelecionado }}
     >
       {children}
     </ProdutosContext.Provider>

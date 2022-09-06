@@ -1,9 +1,9 @@
-import { ProdutosContext } from "contexts/ProductsContext";
-import { useContext } from "React";
+import { ProdutosContext } from "../contexts/ProductsContext";
+import { useContext } from "react";
 
 export const useProducts = () => {
-  const { produtosSelecionados, handleSelecionar, ehCardSelecionado } =
+  const { produtosSelecionados, onSelecionar, ehCardSelecionado } =
     useContext(ProdutosContext);
 
-  return { produtosSelecionados, handleSelecionar, ehCardSelecionado };
+  return { produtosSelecionados, onSelecionar, ehCardSelecionado };
 };

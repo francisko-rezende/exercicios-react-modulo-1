@@ -1,6 +1,6 @@
 import { Footer, Header, Secao, FiltroSecao } from "@components";
 import { produtos } from "@services";
-import { ProdutosProvider } from "contexts/ProdutosProvider";
+import { ProdutosProvider } from "./contexts/ProdutosProvider";
 import { useState } from "react";
 import styles from "./App.module.css";
 
