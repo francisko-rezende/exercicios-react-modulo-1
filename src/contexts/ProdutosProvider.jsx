@@ -23,9 +23,18 @@ export const ProdutosProvider = ({ children }) => {
   const ehCardSelecionado = (cardId) =>
     produtosSelecionados.some(({ id }) => id === cardId);
 
+  const removeTodosProdutosSelecionados = () => {
+    setProdutosSelecionados([]);
+  };
+
   return (
     <ProdutosContext.Provider
-      value={{ produtosSelecionados, onSelecionar, ehCardSelecionado }}
+      value={{
+        produtosSelecionados,
+        onSelecionar,
+        ehCardSelecionado,
+        removeTodosProdutosSelecionados,
+      }}
     >
       {children}
     </ProdutosContext.Provider>
